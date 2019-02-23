@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox VBox.vgrow="ALWAYS">
+         <children>
+            <VBox style="-fx-background-color: #151a23;" HBox.hgrow="ALWAYS">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="323.0" spacing="90.0">
+                     <children>
+                        
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff; -fx-font-size: 24px;" text="Inscription du coach">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Text>
+                        <ImageView fitHeight="65.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../Desktop/27583268_10214988067764299_1857886359_n.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets right="30.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <VBox VBox.vgrow="ALWAYS">
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                     <children>
+                        <TextField fx:id="TxtNom" maxHeight="300.0" maxWidth="300.0" promptText="Nom" style="-fx-background-color: transparent; -fx-border-width: 0 0 2px 0; -fx-text-fill: white; -fx-border-color: white;">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="TxtPrenom" maxHeight="300.0" maxWidth="300.0" promptText="Prenom" style="-fx-background-color: transparent; -fx-border-width: 0 0 2px 0; -fx-border-color: white; -fx-text-fill: white;">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="TxtEmail" maxHeight="300.0" maxWidth="300.0" promptText="Adresse e-mail" style="-fx-background-color: transparent; -fx-border-width: 0 0 2px 0; -fx-border-color: white; -fx-text-fill: white;">
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </TextField>
+                        <PasswordField fx:id="TxtPass" maxHeight="300.0" maxWidth="300.0" promptText="Mot de passe" style="-fx-background-color: transparent; -fx-border-width: 0 0 2px 0; -fx-border-color: white; -fx-text-fill: white;">
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </PasswordField>
+                        <HBox alignment="CENTER" prefHeight="25.0" prefWidth="298.0">
+                           <children>
+                              <Label prefHeight="17.0" prefWidth="139.0" style="-fx-text-fill: white;" text="  Date de naissance">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </Label>
+                              <DatePicker fx:id="DateNaissance" />
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="0.0" prefWidth="314.0" spacing="30.0">
+                           <children>
+                              <RadioButton fx:id="RadBtnHomme" mnemonicParsing="false" style="-fx-text-fill: white;" text="Homme">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="gender" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="RadBtnFemme" mnemonicParsing="false" style="-fx-text-fill: white;" text="Femme" toggleGroup="$gender" />
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                        <TextArea fx:id="TxtNiveauCoach" prefHeight="43.0" prefWidth="283.0" promptText="NIVEAU_COACH" style="-fx-background-color: transparent; -fx-border-width: 0 0 2px 0;" />
+                        <HBox alignment="CENTER_LEFT" prefHeight="16.0" prefWidth="365.0">
+                           <children>
+                              <Label prefHeight="37.0" prefWidth="162.0" style="-fx-text-fill: white;" text="Joindre le diplome ici  : ">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </Label>
+                              <Button fx:id="BtnJoin" mnemonicParsing="false" onAction="#joinPic" prefHeight="7.0" prefWidth="107.0" text="Cliquez ici" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="35.0" prefWidth="314.0" spacing="10.0" VBox.vgrow="NEVER">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#Signup" prefHeight="25.0" prefWidth="83.0" style="-fx-background-color: #0288D1; -fx-text-fill: #ffffff; -fx-background-radius: 0px;" text="S'inscrire">
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" top="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Label onMouseClicked="#Signin" style="-fx-text-fill: white;" text="Deja inscrit ? Connectez ici" underline="true" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets top="20.0" />
+               </padding>
+            </VBox>
+            <VBox alignment="CENTER" prefWidth="300.0" style="-fx-background-color: #0288D1;" HBox.hgrow="ALWAYS">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30px; -fx-fill: #ffffff;" text="Health'Care">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </Text>
+                  <HBox alignment="CENTER_LEFT" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 14px; -fx-fill: #ffffff;" text="&quot;Soignez votre corps Relaxez votre esprit&quot;" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0" id="AnchorPane" prefHeight="570.0" prefWidth="837.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ArticleController">
+    <children>
+      <VBox layoutX="14.0" layoutY="14.0" prefHeight="371.0" prefWidth="202.0" spacing="12.0" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
+         <children>
+            <TextField fx:id="titre" promptText="Titre" style="-fx-border-color: #2471A3;" />
+            <TextArea fx:id="description" prefHeight="152.0" prefWidth="202.0" promptText="Description" style="-fx-border-color: #2471A3;" />
+            <TextField fx:id="editeur" promptText="Editeur" style="-fx-border-color: #2471A3;" />
+            <ComboBox fx:id="type" prefHeight="25.0" prefWidth="221.0" promptText="Type" style="-fx-background-color: #ffff; -fx-border-color: #2471A3;" />
+            <ImageView fx:id="image" fitHeight="97.0" fitWidth="195.0" pickOnBounds="true" preserveRatio="true" />
+            <HBox prefHeight="29.0" prefWidth="202.0" spacing="6.0">
+               <children>
+                  <TextField fx:id="affiche" prefHeight="25.0" prefWidth="135.0" promptText="Affiche" style="-fx-border-color: #2471A3;" />
+                  <Button mnemonicParsing="false" onAction="#Upload" style="-fx-background-color: #2471A3;" text="Upload" textFill="WHITE" />
+               </children>
+            </HBox>
+            <HBox alignment="TOP_RIGHT" prefHeight="26.0" prefWidth="202.0" spacing="6.0">
+               <children>
+                  <Button fx:id="Ajouter" mnemonicParsing="false" onAction="#Ajouter" prefHeight="25.0" style="-fx-background-color: #2471A3;" text="Ajouter" textFill="WHITE" />
+                  <Button fx:id="Modifier" mnemonicParsing="false" onAction="#Modifier" style="-fx-background-color: #2471A3;" text="Modifier" textFill="WHITE" />
+                  <Button fx:id="supprimer" mnemonicParsing="false" onAction="#Supprimer" prefHeight="25.0" prefWidth="73.0" style="-fx-background-color: #2471A3;" text="Supprimer" textFill="WHITE" />
+               </children>
+            </HBox>
+            <VBox prefHeight="45.0" prefWidth="202.0">
+               <children>
+                  <HBox prefHeight="10.0" prefWidth="202.0" spacing="5.0">
+                     <children>
+                        <Button fx:id="enregistrer" mnemonicParsing="false" onAction="#enregistrer" prefHeight="25.0" prefWidth="130.0" style="-fx-background-color: #2471A3;" text="enregistrer" textFill="WHITE" />
+                        <Button fx:id="annuler" mnemonicParsing="false" onAction="#annuler" prefHeight="25.0" prefWidth="131.0" style="-fx-background-color: #2471A3;" text="annuler" textFill="WHITE" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+      <TableView fx:id="tableview" layoutX="229.0" layoutY="14.0" onSort="#buildArticleTable" prefHeight="471.0" prefWidth="384.0" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="229.0" AnchorPane.rightAnchor="191.0" AnchorPane.topAnchor="14.0">
+        <columns>
+            <TableColumn fx:id="col_IdArticle" prefWidth="79.0" text="ID Article" visible="false" />
+            <TableColumn fx:id="col_IdUtil" prefWidth="82.0" text="ID Utilisateur" visible="false" />
+          <TableColumn fx:id="col_titre" prefWidth="41.0" text="Titre" />
+          <TableColumn fx:id="col_description" prefWidth="71.0" text="Description" />
+            <TableColumn fx:id="col_edit" minWidth="7.0" prefWidth="54.0" text="Editeur" />
+            <TableColumn fx:id="col_type" minWidth="0.0" prefWidth="42.0" text="Type" />
+            <TableColumn fx:id="col_Date" prefWidth="84.0" text="Date mise en ligne" />
+            <TableColumn fx:id="col_Affiche" prefWidth="79.0" text="Affiche" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <VBox layoutX="620.0" layoutY="14.0" prefHeight="465.0" prefWidth="177.0" spacing="12.0" AnchorPane.bottomAnchor="27.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="14.0">
+         <children>
+            <HBox prefHeight="28.0" prefWidth="100.0">
+               <children>
+                  <TextField fx:id="chercher" prefHeight="25.0" prefWidth="113.0" promptText="Chercher" />
+                  <Button mnemonicParsing="false" onAction="#Rechercher" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: #2471A3;" text="Recherche" textFill="WHITE" />
+               </children>
+            </HBox>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Filtrer par type" wrappingWidth="154.423828125">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <CheckBox fx:id="Sport" mnemonicParsing="false" text="Sport" />
+            <CheckBox fx:id="Santé" mnemonicParsing="false" text="Santé" />
+            <CheckBox fx:id="Médecine" layoutX="10.0" layoutY="173.0" mnemonicParsing="false" text="Médecine" />
+            <CheckBox fx:id="Nutrition" mnemonicParsing="false" text="Nutrition" />
+            <CheckBox fx:id="Thérapie" layoutX="10.0" layoutY="144.0" mnemonicParsing="false" text="Thérapie" />
+            <CheckBox fx:id="Horoscope" layoutX="10.0" layoutY="231.0" mnemonicParsing="false" text="Horoscope" />
+            <CheckBox fx:id="Citation" mnemonicParsing="false" text="Citation" />
+            <CheckBox fx:id="Psychologie" layoutX="10.0" layoutY="231.0" mnemonicParsing="false" text="Psychologie" />
+            <CheckBox fx:id="Motivation" layoutX="10.0" layoutY="289.0" mnemonicParsing="false" text="Motivation" />
+            <HBox prefHeight="29.0" prefWidth="209.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#Filtrer" prefHeight="0.0" prefWidth="202.0" style="-fx-background-color: #2471A3;" text="Filtrer" textFill="WHITE" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

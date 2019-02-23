@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="606.0" prefWidth="1026.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GestionReclamationController">
+   <children>
+      <BorderPane layoutY="-2.0" prefHeight="538.0" prefWidth="745.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-2.0">
+         <center>
+            <VBox alignment="TOP_CENTER" prefHeight="606.0" prefWidth="806.0" spacing="50.0" style="-fx-border-style: #12GGA;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Detailles" underline="true">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <GridPane prefHeight="369.0" prefWidth="781.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="366.0" minWidth="10.0" prefWidth="145.0" />
+                      <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="596.0" minWidth="10.0" prefWidth="596.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="153.0" minHeight="10.0" prefHeight="150.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="45.0" minHeight="0.0" prefHeight="3.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Utilisateur">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label text="Type de reclamation" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label text="Commentaire" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="TxtUser" editable="false" prefHeight="25.0" prefWidth="244.0" style="-fx-border-color: #2471A3;" GridPane.columnIndex="1" />
+                        <TextField fx:id="TxtType" editable="false" style="-fx-border-color: #2471A3;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextArea fx:id="TxtCommnetaire" editable="false" prefHeight="54.0" prefWidth="259.0" style="-fx-border-color: #2471A3;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label text="Status" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="ComboStatus" editable="true" prefWidth="150.0" style="-fx-border-color: #2471A3;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                  </GridPane>
+                  <GridPane>
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="386.0" minWidth="10.0" prefWidth="228.0" />
+                      <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="553.0" minWidth="10.0" prefWidth="553.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Repondre par mail(Facultatif)">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="20.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <TextArea fx:id="TxtReponse" prefHeight="60.0" prefWidth="366.0" style="-fx-border-color: #2471A3;" GridPane.columnIndex="1" GridPane.rowSpan="2" />
+                        <Button id="ChercherBtn" mnemonicParsing="false" onAction="#EnvoyerMail" prefHeight="27.0" prefWidth="62.0" style="-fx-background-color: #2471A3;" text="Envoyer" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </Button>
+                     </children>
+                  </GridPane>
+               </children>
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+            </VBox>
+         </center>
+         <right>
+            <VBox prefHeight="606.0" prefWidth="245.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="41.0" prefWidth="189.0" spacing="5.0">
+                     <children>
+                        <TextField id="cherch" fx:id="TxtSearch" prefHeight="20.0" prefWidth="122.0" promptText="chercher" style="-fx-border-color: #2471A3;">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </TextField>
+                        <Button id="ChercherBtn" mnemonicParsing="false" onAction="#Search" prefHeight="27.0" prefWidth="62.0" style="-fx-background-color: #2471A3;" text="chercher" textFill="WHITE" />
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="24.0" prefWidth="245.0" spacing="10.0">
+                     <children>
+                        <CheckBox fx:id="CheckBoxTraiter" mnemonicParsing="false" onAction="#CheckTableView" selected="true" text="Traitée" />
+                        <CheckBox fx:id="CheckboxNomTraitee" mnemonicParsing="false" onAction="#CheckTableView" selected="true" text="Non traitée" />
+                        <Button id="ChercherBtn" mnemonicParsing="false" onAction="#Filtre" prefHeight="27.0" prefWidth="62.0" style="-fx-background-color: #2471A3;" text="Filtrer" textFill="WHITE" />
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+                  <TableView fx:id="TableViewReclamation" onMousePressed="#SelectData" prefHeight="573.0" prefWidth="245.0">
+                    <columns>
+                      <TableColumn fx:id="ColumnUser" prefWidth="30.0" text="Id" visible="false" />
+                      <TableColumn fx:id="ColumnText" prefWidth="109.0" text="Text" />
+                        <TableColumn fx:id="ColumnDateReclamation" prefWidth="105.0" text="Date reclamation" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+               </children>
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </VBox>
+         </right>
+      </BorderPane>
+   </children>
+</AnchorPane>
